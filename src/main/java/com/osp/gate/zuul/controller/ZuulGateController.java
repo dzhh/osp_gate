@@ -10,12 +10,20 @@ import com.osp.gate.zuul.service.RefreshRouteService;
 import java.util.Map;
 
 /**
- * 
+ * ZuulGateController
+ * 系统存在ZuulController 重名不起作用
  * @author fly
  *
  */
 @RestController
-public class ZuulController {
+public class ZuulGateController {
+	
+	public static final String PATH_ROOT = "/";
+
+    @RequestMapping(PATH_ROOT)
+    public String welcome() {
+        return "Welcome!";
+    }
 
     @Autowired
     RefreshRouteService refreshRouteService;
