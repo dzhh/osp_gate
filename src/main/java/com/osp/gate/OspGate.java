@@ -2,12 +2,11 @@ package com.osp.gate;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
-import org.springframework.context.annotation.Bean;
-
-import com.osp.gate.filter.SessionAccessFilter;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * 2017/09/05
@@ -17,17 +16,12 @@ import com.osp.gate.filter.SessionAccessFilter;
 
 @SpringBootApplication
 //@EnableDiscoveryClient
-@EnableFeignClients
-//@EnableZuulProxy
+//@EnableFeignClients
+@EnableZuulProxy
 public class OspGate {
 	
 	public static void main(String[] args) {
 		SpringApplication.run(OspGate.class, args);
 	}
 	
-	@Bean
-    public SessionAccessFilter sessionAccessFilter(){  
-        return new SessionAccessFilter();  
-    }
-
 }

@@ -1,4 +1,4 @@
-package com.osp.gate.secruity.controller;
+package com.osp.gate.zuul.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,5 +12,13 @@ public class LoginController {
     public String login() {
         return "login";
     }
+    
+    
+    @RequestMapping(value = "/error",method = RequestMethod.GET)
+    public String error() {
+        return "error";
+    }
+    
+    
     
 }

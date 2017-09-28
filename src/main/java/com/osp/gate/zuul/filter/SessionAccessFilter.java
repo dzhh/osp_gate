@@ -1,4 +1,4 @@
-package com.osp.gate.filter;
+package com.osp.gate.zuul.filter;
 
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +14,7 @@ import com.netflix.zuul.context.RequestContext;
  * @author fly
  *
  */
+@Component
 public class SessionAccessFilter extends ZuulFilter {
 
 	public boolean shouldFilter() {
